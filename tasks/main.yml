@@ -15,14 +15,11 @@
 #
 ---
 
-- name: Include OS-specific variables, Redhat not Fedora
-  include_vars: "{{ ansible_os_family }}.yml"
-  when: ansible_os_family == 'RedHat' and ansible_distribution != 'Fedora'
-
-- name: Include OS-specific variables, non RedHat and/or Fedora
-  include_vars: "{{ ansible_distribution }}.yml"
-  when: ansible_os_family != 'RedHat' or ansible_distribution == 'Fedora'
-
+- name: Include OS-specific variables
+  include_vars: "{{ item }}.yml"
+  with_first_found:
+    - "{{ ansible_distribution }}"
+    - "{{ ansible_os_family }}"
 
 - name: Upgrade package cache
   shell: "{{ ansible_pachage_update }}"
