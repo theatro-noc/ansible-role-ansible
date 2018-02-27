@@ -29,3 +29,6 @@ galaxy_info:
 #  - name: opensuse
 #    versions:
 #    - 42.2
+  galaxy_tags:
+    - ansible
+    - pip
