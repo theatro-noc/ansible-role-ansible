@@ -1,10 +1,10 @@
 # ansible-role-ansible
 
-Ansible playbook to automate upgrading Ansible and necessary libraries for SuperVIO.
+Ansible role to automate upgrading Ansible and necessary libraries.
 
 ## Requirements
 
-This role currently supports only Debian/Ubuntu distros.
+This role currently supports these distros: Debian/Ubuntu, RedHat/CentOS, and Photon.
 
 ## Role Variables
 
@@ -54,3 +54,4 @@ limitations under the License.
 ## Author Information
 
 This role was created in 2015 by [Tom Hite / VMware](http://www.vmware.com/).
+Modified by [Jacob Floyd](https://github.com/cognifloyd), employed by [Theatro](theatro.com), in 2018.
