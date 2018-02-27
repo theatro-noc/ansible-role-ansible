@@ -20,11 +20,9 @@ ansible_additional_packages: []
 ansible_pachage_update: yum makecache fast
 ansible_packages:
   - epel-release
-  - git
+#  - git
   - gcc
   - curl
-  - libxml2-devel
-  - libxslt-devel
   - python-devel
   - python-pip
   - zlib-devel
@@ -33,7 +31,5 @@ ansible_packages:
   - rsync
 pip_modules:
   - httplib2
-  - lxml
-  - pyvmomi
   - paramiko
   - pycrypto

@@ -22,9 +22,6 @@ ansible_packages:
   - sshpass
   - git
   - curl
-  - libxml2-dev
-  - libxslt1-dev
-  - libxslt-dev
   - python-dev
   - python-pip
   - zlib1g-dev
@@ -33,7 +30,5 @@ ansible_packages:
   - rsync
 pip_modules:
   - httplib2
-  - lxml
-  - pyvmomi
   - paramiko
   - pycrypto

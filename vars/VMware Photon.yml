@@ -25,8 +25,6 @@ ansible_packages:
   - gcc
   - git
   - curl
-  - libxml2-devel
-  - libxslt-devel
   - python2
   - python2-devel
   - python2-libs
@@ -35,10 +33,7 @@ ansible_packages:
   - openssl-devel
   - libffi
   - rsync
-
 pip_modules:
   - httplib2
-  - lxml
-  - pyvmomi
   - paramiko
   - pycrypto
