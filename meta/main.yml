@@ -9,15 +9,16 @@ galaxy_info:
 
   platforms:
 
-  - name: Photon Linux
-    versions:
-    - 1.0
+# Not a valid galaxy platform!
+#  - name: Photon Linux
+#    versions:
+#    - 1.0
 
 #  - name: Fedora
 #    versions:
 #    - 24
 #    - 25
-  - name: CentOS
+  - name: EL
     versions:
     - 7
   - name: Ubuntu
