@@ -15,12 +15,15 @@
 #  limitations under the License.
 #
 ---
+- debug:
+    msg: "{{ ansible_facts.distribution }}|{{ ansible_facts.os_family }}"
+
 - name: Include OS-specific variables
   include_vars: "{{ lookup('first_found', _include_os_vars ) }}"
   vars:
     _include_os_vars:
-      - "{{ ansible_distribution }}.yml"
-      - "{{ ansible_os_family }}.yml"
+      - "{{ ansible_facts.distribution }}.yml"
+      - "{{ ansible_facts.os_family }}.yml"
 
 - name: Upgrade package cache
   shell: "{{ ansible_pachage_update }}"
