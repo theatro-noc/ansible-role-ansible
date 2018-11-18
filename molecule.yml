@@ -50,10 +50,10 @@ docker:
 #      image_version: '14.04'
 #      command: /sbin/init
 
-    - name: ubuntu-precise
-      image: ubuntu
-      image_version: '12.04'
-      command: /sbin/init
+#    - name: ubuntu-precise
+#      image: ubuntu
+#      image_version: '12.04'
+#      command: /sbin/init
 
 
 verifier:

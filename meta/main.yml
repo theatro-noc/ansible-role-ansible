@@ -1,11 +1,11 @@
-# Copyright © 2017 VMware, Inc. All Rights Reserved.
+# Copyright © 2017 VMware, Inc., © 2018 Theatro Labs, Inc. All Rights Reserved.
 # SPDX-License-Identifier: Apache-2.0
 
 galaxy_info:
   description: Ensure ansible is installed via pip
   company: VMware Inc.
   license: Apache 2.0
-  min_ansible_version: 2.0
+  min_ansible_version: 2.5
 
   platforms:
 

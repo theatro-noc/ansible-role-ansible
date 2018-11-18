@@ -26,7 +26,7 @@ login and general window services on a development machine.
 ```
 ---
 - hosts: ansible
-  sudo: True
+  become: True
   connection: local
   roles:
     - ansible
@@ -38,6 +38,7 @@ login and general window services on a development machine.
 # License and Copyright
  
 Copyright 2015 VMware, Inc.
+Copyright 2018 Theatro Labs, Inc.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

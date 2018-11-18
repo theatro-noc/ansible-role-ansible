@@ -1,5 +1,6 @@
 #
 #  Copyright 2015-2017 VMware, Inc.
+#  Copyright 2018 Theatro Labs, Inc.
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -16,10 +17,11 @@
 ---
 
 - name: Include OS-specific variables
-  include_vars: "{{ item }}"
-  with_first_found:
-    - "{{ ansible_distribution }}.yml"
-    - "{{ ansible_os_family }}.yml"
+  include_vars: "{{ lookup('first_found', _include_os_vars ) }}"
+  vars:
+    _include_os_vars:
+      - "{{ ansible_distribution }}.yml"
+      - "{{ ansible_os_family }}.yml"
 
 - name: Upgrade package cache
   shell: "{{ ansible_pachage_update }}"
@@ -29,27 +31,33 @@
     - skip_ansible_lint
 
 - name: Install Ansible Prerequisites
-  package: name={{ item }} state=present
-  with_items: "{{ ansible_packages }}"
+  package:
+    name: "{{ ansible_packages }}"
+    state: present
 
 - name: Add any additional packages if defined
-  apt: name={{ item }} state=present
-  with_items: "{{ ansible_additional_packages }}"
+  apt:
+    name: "{{ ansible_additional_packages }}"
+    state: present
 
 - name: Assure services enabled
-  service: name="{{ item }}" enabled=true
-  with_items: "{{ ansible_services }}"
+  service:
+    name: "{{ item }}"
+    enabled: true
+  loop: "{{ ansible_services }}"
   when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
 
 # retry, because sometimes we get a failure if the right pip package is already installed
 - name: Install pip modules
-  pip: name="{{ item }}"
+  pip:
+    name: "{{ pip_modules }}"
   register: ansible_pip_result
-  with_items: "{{ pip_modules }}"
   until: ansible_pip_result|success
   retries: 5
   delay: 1
 
 # Separately install Ansible from pip, doing it with other modules borks now
 - name: Install Ansible via pip
-  pip: name="ansible"
+  pip:
+    name: ansible
+
