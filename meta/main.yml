@@ -2,6 +2,7 @@
 # SPDX-License-Identifier: Apache-2.0
 
 galaxy_info:
+  role_name: ansible
   description: Ensure ansible is installed via pip
   company: VMware Inc.
   license: Apache 2.0
