@@ -23,7 +23,7 @@ ansible_packages:
   - git
   - curl
   - python-dev
-  - python-pip
+  # - python-pip
   - zlib1g-dev
   - libssl-dev
   - libffi-dev

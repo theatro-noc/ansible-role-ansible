@@ -28,7 +28,7 @@ ansible_packages:
   - python2
   - python2-devel
   - python2-libs
-  - python-pip
+  # - python-pip
   - zlib-devel
   - openssl-devel
   - libffi
