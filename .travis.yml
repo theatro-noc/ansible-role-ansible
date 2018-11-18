@@ -11,8 +11,9 @@ install:
   - pip install molecule
   - pip install docker
 script:
-  - >
-    sed -i.orig 's;  playbook.*;  playbook: tests/travis-playbook.yml;' molecule.yml
+  # - >
+  #   sed -i.orig 's;  playbook.*;  playbook: tests/travis-playbook.yml;' molecule.yml
+  - ln -s ansible-role-ansible ../ansible
   - molecule test
 
 notifications:
