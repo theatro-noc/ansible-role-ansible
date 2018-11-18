@@ -14,7 +14,7 @@
 #  limitations under the License.
 #
 ---
-update_package_cache: True
+update_package_cache: true
 ansible_services: []
 ansible_additional_packages: []
 ansible_pachage_update: yum makecache

@@ -1,6 +1,6 @@
 # Copyright © 2017 VMware, Inc., © 2018 Theatro Labs, Inc. All Rights Reserved.
 # SPDX-License-Identifier: Apache-2.0
-
+---
 galaxy_info:
   role_name: ansible
   description: Ensure ansible is installed via pip
@@ -9,27 +9,12 @@ galaxy_info:
   min_ansible_version: 2.5
 
   platforms:
-
-# Not a valid galaxy platform!
-#  - name: Photon Linux
-#    versions:
-#    - 1.0
-
-#  - name: Fedora
-#    versions:
-#    - 24
-#    - 25
-  - name: EL
-    versions:
-    - 7
-  - name: Ubuntu
-    versions:
-#    - all
-    - precise
-    - xenial
-#  - name: opensuse
-#    versions:
-#    - 42.2
+    - name: EL
+      versions:
+        - 7
+    - name: Ubuntu
+      versions:
+        - xenial
   galaxy_tags:
     - ansible
     - pip
