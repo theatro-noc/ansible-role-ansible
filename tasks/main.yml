@@ -26,9 +26,11 @@
         - vars
 
 - name: Upgrade package cache
-  shell: "{{ ansible_pachage_update }}"
-  when: ansible_pachage_update is defined and update_package_cache
+  shell: "{{ ansible_package_update }}"
+  when: ansible_package_update is defined and update_package_cache
   changed_when: false
+  args:
+    warn: no
   tags:
     - skip_ansible_lint
 
@@ -47,14 +49,14 @@
     name: "{{ item }}"
     enabled: true
   loop: "{{ ansible_services }}"
-  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+  when: ansible_facts.distribution == 'Debian' or ansible_facts.distribution == 'Ubuntu'
 
 # retry, because sometimes we get a failure if the right pip package is already installed
 - name: Install pip modules
   pip:
     name: "{{ pip_modules }}"
   register: ansible_pip_result
-  until: ansible_pip_result|success
+  until: ansible_pip_result is succeeded
   retries: 5
   delay: 1
 

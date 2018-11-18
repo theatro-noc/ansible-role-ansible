@@ -17,7 +17,7 @@
 update_package_cache: true
 ansible_services: []
 ansible_additional_packages: []
-ansible_pachage_update: yum makecache fast
+ansible_package_update: yum makecache fast
 ansible_packages:
   - epel-release
   # - git
