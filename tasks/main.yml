@@ -30,7 +30,7 @@
   when: ansible_package_update is defined and update_package_cache
   changed_when: false
   args:
-    warn: no
+    warn: false
   tags:
     - skip_ansible_lint
 
@@ -40,7 +40,7 @@
     state: present
 
 - name: Add any additional packages if defined
-  apt:
+  package:
     name: "{{ ansible_additional_packages }}"
     state: present
 
