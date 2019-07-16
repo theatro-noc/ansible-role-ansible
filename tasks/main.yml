@@ -53,3 +53,4 @@
 - name: Install Ansible via pip
   pip:
     name: ansible
+    version: "{{ ansible_install_version | default(omit) }}"

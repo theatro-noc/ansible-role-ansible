@@ -10,3 +10,6 @@ ansible_additional_packages: []
 ansible_packages: []
 photon_packages: []
 pip_modules: []
+
+# empty string = upgrade to the latest version
+ansible_install_version: ''
