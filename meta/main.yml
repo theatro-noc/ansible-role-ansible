@@ -1,12 +1,12 @@
 # Copyright © 2017 VMware, Inc., © 2018 Theatro Labs, Inc. All Rights Reserved.
-# SPDX-License-Identifier: Apache-2.0
+# SPDX-License-Identifier: Apache-2.0 OR GPL-3.0-only
 ---
 galaxy_info:
   role_name: ansible
   description: Ensure ansible is installed via pip
   author: VMWare Inc.
   company: VMware Inc.
-  license: Apache 2.0
+  license: license ( Apache, GPLv3 )
   min_ansible_version: 2.5
 
   platforms:
