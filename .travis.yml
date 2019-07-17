@@ -3,14 +3,13 @@
 ---
 sudo: required
 language: python
-# cache: pip
+cache: pip
 services:
   - docker
 before_install:
   - sudo apt-get -qq update
 install:
-  - pip install molecule==2.20.2
-  #- pip install molecule
+  - pip install molecule
   - pip install docker
   - ln -s ansible-role-ansible ../ansible
 script:
