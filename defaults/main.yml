@@ -13,3 +13,4 @@ pip_modules: []
 
 # empty string = upgrade to the latest version
 ansible_install_version: ''
+ansible_install_state: 'present'  # latest is often a good choice too

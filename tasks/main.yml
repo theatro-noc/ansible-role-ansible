@@ -54,3 +54,4 @@
   pip:
     name: ansible
     version: "{{ ansible_install_version | default(omit) }}"
+    state: "{{ ansible_install_state }}"
